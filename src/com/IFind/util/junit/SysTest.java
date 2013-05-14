@@ -1,5 +1,6 @@
 package com.IFind.util.junit;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,7 +8,9 @@ import org.junit.Test;
 
 import com.IFind.Entity.BasicEntity;
 import com.IFind.Entity.User;
+import com.IFind.Inti.InitService;
 import com.IFind.api.Sys;
+import com.IFind.cache.ApplicationCache;
 import com.IFind.sys.EntityFactory;
 
 public class SysTest {
@@ -39,6 +42,10 @@ public class SysTest {
 		System.out.println(user.getPassword());
 		System.out.println(user.getUserName());
 		System.out.println(user.getCreated_date());
-		
+	}
+	@Test 
+	public void serviceFactory() throws Exception{
+	    InitService.init();
+	    System.out.println(ApplicationCache.getServiceMap().getProperty("register.en"));
 	}
 } 

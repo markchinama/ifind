@@ -1,4 +1,4 @@
-package com.IFind.Exception;
+package com.IFind.exception;
 
 public class NoEntityException extends Exception {
 

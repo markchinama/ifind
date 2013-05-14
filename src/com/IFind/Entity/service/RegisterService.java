@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.IFind.Entity.IEntity;
 import com.IFind.Entity.User;
-import com.IFind.Exception.NoEntityException;
+import com.IFind.exception.NoEntityException;
 import com.IFind.sys.EntityFactory;
 
 public class RegisterService implements IService{

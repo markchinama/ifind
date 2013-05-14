@@ -20,7 +20,13 @@ public class EntityService extends HttpServlet{
 		// TODO Auto-generated method stub
 		String servicename = Sys.getService(request.getRequestURL());
 		IService is = ServiceFactory.getService(servicename);
-		
+		try {
+			is.execute(request, response);
+			//response.sendRedirect("index.jsp");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		super.service(request, response);
 	}
 
