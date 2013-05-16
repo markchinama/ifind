@@ -16,4 +16,7 @@
  <login-config>
   <auth-method>BASIC</auth-method>
  </login-config>
+  <listener>
+   <listener-class>com.IFind.listener.CacheListener</listener-class>
+  </listener>
 </web-app>

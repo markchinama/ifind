@@ -8,10 +8,12 @@ import org.junit.Test;
 
 import com.IFind.Entity.BasicEntity;
 import com.IFind.Entity.User;
+import com.IFind.Entity.service.IService;
 import com.IFind.Inti.InitService;
 import com.IFind.api.Sys;
 import com.IFind.cache.ApplicationCache;
 import com.IFind.sys.EntityFactory;
+import com.IFind.sys.ServiceFactory;
 
 public class SysTest {
 	@Test
@@ -32,20 +34,24 @@ public class SysTest {
 		Map map = new HashMap();
 		map.put("username", "mark");
 		map.put("password", "machao");
-		map.put("neckname", "mark_ma");
+		map.put("nickname", "mark_ma");
 		map.put("mailaddress", "mark.chinama@gmail.com");
 		map.put("liveaddress", "shanghai");
 		User user = (User)EntityFactory.newInstance("User", map);
 		System.out.println(user.getLiveAddress());
 		System.out.println(user.getMailAddress());
-		System.out.println(user.getNeckName());
+		System.out.println(user.getNickName());
 		System.out.println(user.getPassword());
 		System.out.println(user.getUserName());
 		System.out.println(user.getCreated_date());
 	}
 	@Test 
 	public void serviceFactory() throws Exception{
-	    InitService.init();
-	    System.out.println(ApplicationCache.getServiceMap().getProperty("register.en"));
+	   String filename ="C:\\smtp\\IFind\\IFind\\WebRoot\\WEB-INF\\service.properties";
+	   InitService.init(filename);
+	   IService is = ServiceFactory.getService("register");
+	   System.out.println(is==null);
+	   
+	   
 	}
 } 

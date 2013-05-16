@@ -7,7 +7,7 @@ public class User extends BasicEntity {
 
 	private String userName;
 	private String password;
-	private String neckName;
+	private String nickName;
 	private String mailAddress;
 	private String liveAddress;
 
@@ -28,12 +28,12 @@ public class User extends BasicEntity {
 		this.password = password;
 	}
 
-	public String getNeckName() {
-		return neckName;
+	public String getNickName() {
+		return nickName;
 	}
 
-	public void setNeckName(String neckName) {
-		this.neckName = neckName;
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
 	}
 
 	public String getMailAddress() {
