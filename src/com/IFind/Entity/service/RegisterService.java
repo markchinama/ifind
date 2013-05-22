@@ -15,7 +15,7 @@ public class RegisterService implements IService {
 	public void execute(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		Map map = request.getParameterMap();
-		User user = (User) EntityFactory.newInstance("USER", map);
+		User user = (User) EntityFactory.newInstance("User", map);
 		if (null == user)
 			throw new NoEntityException();
 		else {

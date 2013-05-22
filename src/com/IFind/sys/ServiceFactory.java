@@ -7,8 +7,9 @@ public class ServiceFactory {
 
 	public static IService getService(String servicename) {
 		try {
+			System.out.println(servicename);
 			String classname = ApplicationCache.getServiceMap().get(servicename).toString();
-			System.out.println(classname);
+			System.out.println(classname+"ss");
 			System.out.println(classname == null);
 			System.out.println(classname.equals(""));
 			Class cla = Class.forName(classname);

@@ -14,9 +14,11 @@ public class EntityFactory {
 	@SuppressWarnings("unchecked")
 	public static Object newInstance(String entityname, Map map) {
 		try {
+			System.out.println(ENTITYPATH + entityname );
 			Class<BasicEntity> cla = (Class<BasicEntity>) Class
 					.forName(ENTITYPATH + entityname);
 			Object obj = cla.newInstance();
+			System.out.println("the result is "+obj==null);
 			Method[] methods = cla.getMethods();
 			for (Method method : methods) {
 				String methodName = method.getName();
