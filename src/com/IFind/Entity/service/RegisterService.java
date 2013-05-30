@@ -4,8 +4,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.IFind.Entity.IEntity;
 import com.IFind.Entity.User;
 import com.IFind.exception.NoEntityException;
 import com.IFind.sys.EntityFactory;
