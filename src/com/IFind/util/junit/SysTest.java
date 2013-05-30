@@ -9,7 +9,6 @@ import org.junit.Test;
 import com.IFind.Entity.BasicEntity;
 import com.IFind.Entity.User;
 import com.IFind.Entity.service.IService;
-import com.IFind.Inti.InitService;
 import com.IFind.api.Sys;
 import com.IFind.cache.ApplicationCache;
 import com.IFind.sys.EntityFactory;
@@ -19,7 +18,7 @@ public class SysTest {
 	@Test
 	public void sysUrlTest() {
 		assert (Sys.getService(new StringBuffer(
-				"http://localhost/infind/sss?sss=sss")).equals("sss"));
+				"http://localhost/infind/sss.en?sss=sss")).equals("sss.en"));
 	}
 	@Test
 	public void basicEntityDataTest()
@@ -48,7 +47,7 @@ public class SysTest {
 	@Test 
 	public void serviceFactory() throws Exception{
 	   String filename ="C:\\smtp\\IFind\\IFind\\WebRoot\\WEB-INF\\service.properties";
-	   InitService.init(filename);
+	   ApplicationCache.init(filename);
 	   IService is = ServiceFactory.getService("register");
 	   System.out.println(is==null);
 	   

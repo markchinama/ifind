@@ -18,10 +18,10 @@ public class EntityFactory {
 			Class<BasicEntity> cla = (Class<BasicEntity>) Class
 					.forName(ENTITYPATH + entityname);
 			Object obj = cla.newInstance();
-			System.out.println("the result is "+obj==null);
 			Method[] methods = cla.getMethods();
 			for (Method method : methods) {
 				String methodName = method.getName();
+				System.out.println(methodName);
 				if (methodName.substring(0, 3).equalsIgnoreCase(SETTER)) {
 					String field = methodName.substring(3, methodName.length()).toLowerCase();
 					method.invoke(obj, map.get(field));
@@ -31,6 +31,7 @@ public class EntityFactory {
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
 			return null;
 		}
 

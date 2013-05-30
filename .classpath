@@ -5,5 +5,8 @@
 	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/basicjar/mongo-2.10.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/basicjar/c3p0-0.9.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/smtp/jforum/WEB-INF/lib/mysql-connector-java-5.0.3-bin.jar"/>
+	<classpathentry kind="lib" path="C:/basicjar/log4j-1.2.15.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

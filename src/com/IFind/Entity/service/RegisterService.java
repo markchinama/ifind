@@ -17,7 +17,7 @@ public class RegisterService implements IService {
 		Map map = request.getParameterMap();
 		User user = (User) EntityFactory.newInstance("User", map);
 		if (null == user)
-			throw new NoEntityException();
+			throw new NoEntityException("can not find user");
 		else {
 			System.out.println(user.getNickName());
 		}
