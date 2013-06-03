@@ -1,20 +1,20 @@
 package com.IFind.Entity;
 
-import java.text.SimpleDateFormat;
-import java.util.Map;
-
 import com.IFind.api.Sys;
 
 public class BasicEntity {
-	private String created_date;
+	private String createdDate;
 
-	public String getCreated_date() {
-		return created_date;
+	public String getCreatedDate() {
+		return createdDate;
 	}
 
-	public void setCreated_date(String createdDate) {
+	public void setCreatedDate(String createdDate) {
 
-		this.created_date = Sys.getNowDate();
+		if (null == createdDate)
+			this.createdDate = Sys.getNowDate();
+		else
+			this.createdDate = createdDate;
 	}
 
 	public BasicEntity() {

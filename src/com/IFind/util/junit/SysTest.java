@@ -24,8 +24,8 @@ public class SysTest {
 	public void basicEntityDataTest()
 	{
 		BasicEntity be = new BasicEntity();
-		be.setCreated_date(null);
-		System.out.println(be.getCreated_date());
+		be.setCreatedDate(null);
+		System.out.println(be.getCreatedDate());
 		
 	}
 	@Test
@@ -42,7 +42,7 @@ public class SysTest {
 		System.out.println(user.getNickName());
 		System.out.println(user.getPassword());
 		System.out.println(user.getUserName());
-		System.out.println(user.getCreated_date());
+		System.out.println(user.getCreatedDate());
 	}
 	@Test 
 	public void serviceFactory() throws Exception{

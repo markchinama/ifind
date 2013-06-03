@@ -6,16 +6,16 @@ import org.apache.log4j.Logger;
 
 import com.IFind.db.C3P0PooledConnection;
 
-public class WorkFlowContext {
+public class WorkflowContext {
 	private static ThreadLocal workflowData = new ThreadLocal();
-	private static Logger logger = Logger.getLogger(WorkFlowContext.class);
+	private static Logger logger = Logger.getLogger(WorkflowContext.class);
 	private Connection conn;
 
-	public static WorkFlowContext get() {
-		WorkFlowContext ex = (WorkFlowContext) workflowData.get();
+	public static WorkflowContext get() {
+		WorkflowContext ex = (WorkflowContext) workflowData.get();
 
 		if (ex == null) {
-			ex = new WorkFlowContext();
+			ex = new WorkflowContext();
 			workflowData.set(ex);
 		}
 
@@ -26,7 +26,7 @@ public class WorkFlowContext {
 		return (workflowData.get() != null);
 	}
 
-	public static void set(WorkFlowContext ex) {
+	public static void set(WorkflowContext ex) {
 		workflowData.set(ex);
 	}
 
@@ -44,7 +44,7 @@ public class WorkFlowContext {
 	}
 
 	public static Connection getConnection(boolean validate) {
-		WorkFlowContext ex = get();
+		WorkflowContext ex = get();
 		Connection c = ex.conn;
 
 		if (validate && c == null) {

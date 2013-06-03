@@ -61,7 +61,6 @@ public class C3P0PooledConnection extends DBConnection
 	public void init() throws Exception
 	{
 		this.ds = new ComboPooledDataSource();
-		System.out.println(ConfigKeys.DATABASE_CONNECTION_DRIVER);
 		this.ds.setDriverClass(DbConfig.getValue(ConfigKeys.DATABASE_CONNECTION_DRIVER));
 		this.ds.setJdbcUrl(DbConfig.getValue(ConfigKeys.DATABASE_CONNECTION_STRING));
 		this.ds.setMinPoolSize(DbConfig.getIntValue(ConfigKeys.DATABASE_POOL_MIN));
