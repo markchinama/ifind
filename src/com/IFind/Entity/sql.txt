@@ -1,0 +1,45 @@
+create table WFL_WORKFLOW
+(
+  WORKFLOW_ID           int(11) primary key auto_increment,
+  WORKFLOW_CODE          VARCHAR(50),  
+  WORK_FLOWNAME         VARCHAR(100),  
+  DESCRIPTION           VARCHAR(500),
+  CAN_CANCEL            int(1) not null default 0,
+  CREATED_BY            int not null,
+  CREATION_DATE         DATE not null
+);
+
+create table WFL_WORKFLOW_NODE
+(
+  NODE_ID                   int(15) primary key auto_increment,
+  WORKFLOW_ID               int(15) not null,
+  SEQUENCE_NUM              int(15) default 0,
+  RECIPIENT_TYPE            int(5) default 0,
+  IS_DATE_LIMITED           int(1) default 0,
+  OBJECT_VERSION_NUMBER     int(9) default 0,
+  FORM_NAME                 VARCHAR(200),
+  APPROVAL_TYPE             int(5) default 0 not null,
+  RECIPIENT_PROC            VARCHAR(300),
+  NAME_ID                   int,
+  DESCRIPTION               VARCHAR(500),
+  CAN_DELIVER_TO            int default 1,
+  CAN_AUTO_PASS             int default 1,
+  CAN_NO_APPROVER           int default 1,
+  CAN_ADD_APPROVER          int,
+  CREATED_BY                int not null,
+  CREATION_DATE             DATE 
+);
+create table WFL_WORKFLOW_INSTANCE
+(
+  INSTANCE_ID           int(15) PRIMARY key auto_increment,
+  WORKFLOW_ID           int(15) not null,
+  STATUS                int(5) default 0 not null,
+  CURRENT_NODE          int(15) default 0 not null,
+  REASON                VARCHAR(2000),
+  CURRENT_HANDLER       int(15) default 0,
+  STATUS_DESC           VARCHAR(1000),
+  APPROVE_COUNT         int default 1,
+  ATTACHMENT_ID         int,
+  CREATED_BY            int not null,
+  CREATION_DATE         date  
+)
