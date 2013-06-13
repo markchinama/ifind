@@ -7,7 +7,7 @@ public interface WorkflowInstanceDao {
 
 	public void insertWorkflowInstance(WorkflowInstance workflowinstance);
 
-	public void deleteWorkflowInstance(WorkflowInstance workflowinstance);
+	public void deleteWorkflowInstance(int instanceid);
 
 	public void updateWorkflowInstance(int instanceid,
 			WorkflowInstance workflowinstance);

@@ -1,7 +1,7 @@
 package com.IFind.Entity;
 
-public class WorkflowInstance {
-	private int id;
+public class WorkflowInstance extends BasicEntity {
+	private int instanceid;
 	private int workflowId;
 	private int status;
 	private int currentNode;
@@ -11,11 +11,11 @@ public class WorkflowInstance {
 	private int approveCount;
 	private int attachmentId;
 	private int createdBy;
-	public int getId() {
-		return id;
+	public int getInstanceId() {
+		return instanceid;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int instanceid) {
+		this.instanceid = instanceid;
 	}
 	public int getWorkflowId() {
 		return workflowId;
